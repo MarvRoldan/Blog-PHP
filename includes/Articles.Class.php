@@ -32,7 +32,7 @@ class Articles
 
                 echo '<li>'. $newArticle->output( FALSE ).'</li>';
             }
-            echo '<ul>';
+            echo '</ul>';
         }
     }
 }
