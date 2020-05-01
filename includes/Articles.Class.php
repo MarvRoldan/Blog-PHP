@@ -1,5 +1,7 @@
 <?php
 
+include_once dirname(__FILE__) . '/Article.Class.php';
+
 class Articles
 {
     private $allArticles = array();
@@ -26,8 +28,11 @@ class Articles
 
             foreach ( $this->allArticles as $articles )
             {
-                $newArticle = new 
+                $newArticle = new Article ( $articles->id, $articles->title, $articles->content );
+
+                echo '<li>'. $newArticle->output( FALSE ).'</li>';
             }
+            echo '<ul>';
         }
     }
 }
