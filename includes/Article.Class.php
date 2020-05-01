@@ -18,7 +18,23 @@ class Article
 
     public function output ( $echo = TRUE )
     {
-        
+        $output = '';
+
+        ob_start(); ?>
+
+            <dl>
+                <dt>ID</dt>
+                <dd><?php echo $this->id; ?></dd>
+                <dt>Title</dt>
+                <dd><?php echo $this->title; ?></dd>
+                <dt>Content</dt>
+                <dd><?php echo $this->content; ?></dd>
+            </dl>
+        <?php 
+        $output = ob_get_clean();
+        if ( $echo === TRUE ) echo $output;
+
+        return $output;
     }
 }
 
